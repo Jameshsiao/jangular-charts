@@ -253,7 +253,7 @@ angular.module('angularCharts').directive('acChart', [
        */
         var svg = d3.select(chartContainer[0]).append('svg').attr('width', width).attr('height', height + margin.top + margin.bottom).append('g').attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
         svg.append('g').attr('class', 'grid').call(make_y_axis().tickSize(-width, 0, 0).tickFormat(''));
-        svg.append('g').attr('class', 'x axis').attr('transform', 'translate(0,' + height + ')').call(xAxis);
+        svg.append('g').attr('class', 'x axis').attr('transform', 'translate(0,' + (height+5) + ')').call(xAxis);
         svg.append('g').attr('class', 'y axis').call(yAxis);
         /**
        * Add bars
@@ -872,7 +872,7 @@ angular.module('angularCharts').directive('acChart', [
 (function () {
     // styles.min.css
     var cssText = "" +
-".angular-charts-template .axis path,.angular-charts-template .axis line{fill:none;stroke:#333}.angular-charts-template .ac-title{font-weight:700;font-size:1.2em}.angular-charts-template .ac-chart{float:left;width:75%}.angular-charts-template .ac-line{fill:none;stroke-width:2px}.angular-charts-template table{float:left;max-width:25%;list-style:none;margin:0;padding:0}.angular-charts-template td[ng-bind]{display:inline-block}.angular-charts-template .ac-legend-box{border-radius:5px;height:15px;width:15px}.ac-tooltip{display:block;position:absolute;border:2px solid rgba(51,51,51,.9);background-color:rgba(22,22,22,.7);border-radius:5px;padding:5px;color:#fff} .angular-charts-template.legend-bottom .ac-chart, .angular-charts-template.legend-bottom .ac-legend{width:100%;padding-left:20px} .angular-charts-template.legend-bottom table{max-width:inherit;width:auto;margin-left:50px} .angular-charts-template.legend-bottom td div {display:inline-block;vertical-align:top;} .angular-charts-template.legend-bottom .ac-legend-box{border-radius:0;margin-right:5px;}";
+".angular-charts-template .axis path,.angular-charts-template .axis line{fill:none;stroke:#333}.angular-charts-template .ac-title{font-weight:700;font-size:1.2em}.angular-charts-template .ac-chart{float:left;width:75%}.angular-charts-template .ac-line{fill:none;stroke-width:2px}.angular-charts-template table{float:left;max-width:25%;list-style:none;margin:0;padding:0}.angular-charts-template td[ng-bind]{display:inline-block}.angular-charts-template .ac-legend-box{border-radius:5px;height:15px;width:15px}.ac-tooltip{display:block;position:absolute;border:2px solid rgba(51,51,51,.9);background-color:rgba(22,22,22,.7);border-radius:5px;padding:5px;color:#fff;z-index:999} .angular-charts-template.legend-bottom .ac-chart, .angular-charts-template.legend-bottom .ac-legend{width:100%;padding-left:20px} .angular-charts-template.legend-bottom table{max-width:inherit;width:auto;margin-left:50px} .angular-charts-template.legend-bottom td div {display:inline-block;vertical-align:top;} .angular-charts-template.legend-bottom .ac-legend-box{border-radius:0;margin-right:5px;}";
     // cssText end
 
     var styleEl = document.createElement("style");
